@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="Js/validacion.js"></script>
+    <title>Crear usuario</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="tittle">Formulario</h1>
+    </header>
+    <section>
+        <div class="formulario">
+            <h2>Registro</h2>
+            <form method="POST" onsubmit="return validarCamposObligatorios()">
+                <span class="error" id="errorCedula">CORRIJA EL ERROR</span>
+                <label for="cedula">Cedula</label>
+                <input type="text" name="cedula" id="cedula" onkeyup="validarNumeros(event,'errorCedula',this)">
+                <span class="error" id="errorNombre">CORRIJA EL ERROR</span>
+                <label for="nombre">Nombres</label>
+                <input type="text" name="nombre" id="nombre" onkeyup="validarLetras(event,'errorNombre',this)">
+                <span class="error" id="errorApellico">CORRIJA EL ERROR</span>
+                <label for="apellido">Apellidos</label>
+                <input type="text" name="apellido" id="apellido" onkeyup="validarLetras(event,'errorApellico',this)">
+                <span class="error" id="errorDireccion">CORRIJA EL ERROR</span>
+                <label for="direccion">Direccion</label>
+                <input type="text" name="direccion" id="direccion">
+                <span class="error" id="errorTelefono">CORRIJA EL ERROR</span>
+                <label for="telefono">Telefono</label>
+                <input type="text" name="telefono" id="telefono" onkeyup="validarNumeros(event,'errorTelefono',this)">
+                <span class="error" id="errorFechaNac">CORRIJA EL ERROR</span>
+                <label for="fechaNac">Fecha de nacimiento</label>
+                <input type="text" name="fechaNac" id="fechaNac" onkeyup="validarFecha('errorFechaNac',this)">
+                <span class="error" id="errorEmail">CORRIJA EL ERROR</span>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" onkeyup="validarCorreo('errorEmail',this)">
+                <span class="error" id="errorPass">CORRIJA EL ERROR</span>
+                <label for="pass">Contraseña</label>
+                <input type="password" name="pass" id="pass">
+                <span class="error" id="errorCPass">CORRIJA EL ERROR</span>
+                <label for="cpass">Confirmar Contraseña</label>
+                <input type="password" name="cpass" id="cpass" onkeyup="validarPass('errorCPass')">
+
+                <input type="submit" value="Crear">
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
